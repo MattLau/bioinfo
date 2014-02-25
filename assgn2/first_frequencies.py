@@ -1,5 +1,6 @@
 #!usr/bin/env python3
 
+import json
 import sys
 
 freq_table = {}
@@ -14,4 +15,5 @@ for line in sys.stdin:
 for key in freq_table.keys():
   freq_table[key] = float(freq_table[key])/total_count
 
-print(freq_table)
+with open("first_freq_json", "w") as out:
+  json.dump(freq_table, out)
