@@ -16,7 +16,6 @@ for line in sys.stdin:
       freq_table[current] += 1
       total_count += 1
     last = letter
-  
 
 for key in freq_table.keys():
   freq_table[key] = float(freq_table[key])/total_count

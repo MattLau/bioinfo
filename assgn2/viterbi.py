@@ -1,5 +1,11 @@
 #!usr/bin/env python3
 
+"""
+@author: Matthew Lau
+@email: mattlau@outlook.com
+@assignment: BIO337_PS#2
+"""
+
 import json
 import sys
 
@@ -18,8 +24,8 @@ def new_map():
 
 def replace(var):
   if var == "S":
-    return "s"
-  return "t"
+    return "S"
+  return "T"
 
 for seq in sys.stdin:
   seq = seq.rstrip()
@@ -56,11 +62,11 @@ for seq in sys.stdin:
       currentMax = value
       currentMaxKey = key
 
-  MLS = currentMaxKey[0]+replace(currentMaxKey[1])
+  MLS = replace(currentMaxKey[1])
   for i in range(len(pointer)-1, -1, -1):
     nextKey = pointer[i][currentMaxKey]
-    MLS = nextKey[0]+replace(nextKey[1]) + MLS
+    MLS = replace(nextKey[1]) + MLS
     currentMaxKey = nextKey
-  print(" ".join(seq))
+  print(seq)
   print(MLS,"\n")
 

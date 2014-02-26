@@ -24,7 +24,7 @@ for line in open("transmembrane_sequences", "r"):
     total_count += 1
 
 for key in freq_table.keys():
-  freq_table[key] = float(freq_table[key]/total_count)
+  freq_table[key] = float(freq_table[key])/total_count
 
 with open("total_freq_json", "w") as out:
   json.dump(freq_table, out)
